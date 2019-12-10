@@ -134,7 +134,7 @@ MoverImagen:
     mov dx,184fh 
     mov cx,0000H
     Int 10H
-    mov ah,02h
+    mov ah,07h
     mov bh,00
     mov dh,00
     mov dl,00
@@ -429,13 +429,13 @@ int 10h
 mov dx, serpiente[0] 
 
 ; Poner cursor en dl,dh 
-mov ah, 02h 
+mov ah, 02h  
 int 10h 
 
 ; Imprimir '#' 
-mov al, 5h,'#' 
+mov al, 5h,'#'
 mov ah, 09h 
-mov bl, 0eh  
+mov bl, 03h  
 mov cx, 1  
 int 10h 
 
