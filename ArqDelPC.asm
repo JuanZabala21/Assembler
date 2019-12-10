@@ -14,25 +14,25 @@ DEFINE_PRINT_NUM_UNS
         got db 0                    ; Numero de caracteres realmente leidos, excluyendo salto de linea
         buf db 100 dup (0)          ; Caracteres actualmente leidos, incluyendo salto de linea
     Linefeed db 13, 10, '$'
-    Cadena   db 'Introduzca palabra: $'
+    Cadena   db 13, 10, 'Introduzca una palabra: $'
 
 .data
-cabecera db 13,10,'ARQUITECTURA DEL COMPUTADOR: Willie Manzano, Juan Zabala, Carlos Zapata',13,10,'$'
+cabecera db 13,10,'Bienvenido/a',13,10,13,10,'----- MENU PRINCIPAL -----',13,10,13,10,'$'
 
 ;MENSAJES
 opciones db '1- Banderas',13,10,
-db 13,10,'2- Movimiento de una imagen en pantalla',13,10,
-db 13,10,'3- Operaciones Matematicas',13,10,
-db 13,10,'4- Ordenador Alfabetico',13,10,
-db 13,10,'Pulse cualquier otra tecla para salir',13,10,
-db 13,10,'Elija una opcion',13,10,'$'
+db '2- Movimiento de una imagen en pantalla',13,10,
+db '3- Operaciones Matematicas',13,10,
+db '4- Ordenador Alfabetico',13,10,
+db 'Pulse cualquier otra tecla para salir',13,10,
+db 13,10,'Elija una opcion: $'
 
 mensaje1 db 'Pulse cualquier tecla para volver al menu principal',13,10,'$'
-mensaje2 db 'Presione cualquier boton para iniciar',13,10,'$'
+mensaje2 db 'Presione cualquier tecla para iniciar',13,10,'$'
 mensaje3 db 'Pantalla en color gris con letras negras',13,10,'$'
-mensaje4 db 'Utilice las flechas para desplazarse' ,13,10,'$'
-mensaje5 db 13,10,'Digite el Primer Numero: $' 
-mensaje6 db 13,10,'Digite el Segundo Numero: $'
+mensaje4 db '    Desplacese con las flechas de direccion' ,13,10,'$'
+mensaje5 db 13,10,'Escriba el Primer Numero: $' 
+mensaje6 db 13,10,'Escriba el Segundo Numero: $'
 mensaje7 db 13,10,'La Suma Es: $' 
 mensaje8 db 13,10,'La Resta Es: $' 
 mensaje9 db 13,10,'La Multiplicacion Es: $' 
@@ -432,8 +432,8 @@ mov dx, serpiente[0]
 mov ah, 02h 
 int 10h 
 
-; Imprimir '*' 
-mov al, '*' 
+; Imprimir '#' 
+mov al, 5h,'#' 
 mov ah, 09h 
 mov bl, 0eh  
 mov cx, 1  
