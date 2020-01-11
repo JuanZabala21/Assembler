@@ -435,7 +435,7 @@ int 10h
 ; Imprimir '#' 
 mov al, 5h,'#'
 mov ah, 09h 
-mov bl, 03h  
+mov bl, 03h ;Color  
 mov cx, 1  
 int 10h 
 
@@ -455,7 +455,7 @@ int 10h
 ; Imprimir ' ' 
 mov al, ' ' 
 mov ah, 09h 
-mov bl, 0eh ; attribute. 
+mov bl, 0eh ; attributo. 
 mov cx, 1 ; single char. 
 int 10h 
 
